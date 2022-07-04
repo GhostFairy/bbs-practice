@@ -1,0 +1,58 @@
+#bbs-wrapper {
+    margin: 50px auto;
+    width: 940px;
+    text-align: center;
+}
+
+#bbs-wrapper a {
+    text-decoration: none;
+}
+
+#bbs-title {
+    margin: 30px auto;
+}
+
+.bbs-menu {
+    text-align: right;
+}
+
+.bbs-btn {
+    width: 80px;
+    height: 40px;
+    border: 1px solid gray;
+    border-radius: 3px;
+    margin: 10px 0px;
+}
+
+.bbs-btn:hover {
+    cursor: pointer;
+}
+
+.bbs-btn a {
+    display: block;
+    height: 100%;
+    line-height: 40px;
+    font-weight: bold;
+}
+
+.bbs-btn:not(:last-child) {
+    margin-right: 10px;
+}
+
+.bbs-btn.bbs-write,
+.bbs-btn.bbs-confirm {
+    background-color: gray;
+}
+
+.bbs-btn.bbs-write a,
+.bbs-btn.bbs-confirm a {
+    color: white;
+}
+
+.bbs-btn.bbs-cancel {
+    background-color: white;
+}
+
+.bbs-btn.bbs-cancel a {
+    color: black;
+}

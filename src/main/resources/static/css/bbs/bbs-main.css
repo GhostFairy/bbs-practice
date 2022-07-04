@@ -1,0 +1,14 @@
+#bbs-header {
+    border-width: 2px 0;
+    border-color: gray;
+    border-style: solid;
+    font-weight: bold;
+    display: grid;
+    grid-template-columns: 65% 15% 10% 10%;
+    height: 40px;
+    line-height: 36px;
+}
+
+#bbs-content-empty {
+    padding: 100px;
+}

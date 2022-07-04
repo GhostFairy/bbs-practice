@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.demo.bbs.dao.IBbsDAO">
+	<select id="getArticleList" resultType="ArticleListDTO">
+		SELECT ARTICLE_ID, TITLE,
+		AUTHOR, WRITE_DATE, VIEW_COUNT FROM EXPORTTESTUSER.TEST_TABLE_BBS
+	</select>
+
+	<select id="getArticle" resultType="ArticleDTO">
+		SELECT * FROM
+		EXPORTTESTUSER.TEST_TABLE_BBS WHERE ARTICLE_ID = #{articleId};
+	</select>
+	
+	<insert id="writeArticle">
+		INSERT INTO EXPORTTESTUSER.TEST_TABLE_BBS(TITLE, CONTENT, AUTHOR) VALUES(#{title}, #{content}, #{id})
+	</insert>
+</mapper>

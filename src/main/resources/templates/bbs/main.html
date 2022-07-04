@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>TEST</title>
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link href="/static/css/bbs/bbs-common.css" rel="stylesheet">
+    <link href="/static/css/bbs/bbs-main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="bbs-wrapper">
+        <h1 id="bbs-title">BBS</h1>
+        <div class="bbs-menu">
+            <button class="bbs-btn bbs-write"><a href="/bbs/write">글 작성</a></button>
+        </div>
+        <div id="bbs-main">
+            <div id="bbs-header" class="bbs-grid">
+                <div>제목</div>
+                <div>작성자</div>
+                <div>작성일</div>
+                <div>조회</div>
+            </div>
+        </div>
+        <div id="bbs-content-empty" th:if="${articleList eq null || #lists.size(articleList) le 0}">
+            등록된 게시글이 없습니다.
+        </div>
+        <div th:if="${articleList ne null && #lists.size(articleList) gt 0}">
+
+        </div>
+        <div class="bbs-menu">
+            <button class="bbs-btn bbs-write"><a href="/bbs/write">글 작성</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

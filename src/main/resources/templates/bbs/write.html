@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>TEST</title>
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link href="/static/css/bbs/bbs-common.css" rel="stylesheet">
+    <link href="/static/css/bbs/bbs-write.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="bbs-wrapper">
+        <h1 id="bbs-title">글 작성</h1>
+        <div class="bbs-menu">
+            <button class="bbs-btn bbs-cancel"><a href="/bbs">취소</a></button><button class="bbs-btn bbs-confirm"><a
+                    href="/bbs/write">등록</a></button>
+        </div>
+        <div id="bbs-main">
+            <form id="bbs-write-form" action="/bbs/write" method="POST">
+                <input id="article-title" type="text" placeholder="제목을 입력하세요.">
+                <textarea id="article-content" placeholder="내용을 입력하세요."></textarea>
+            </form>
+        </div>
+        <div class="bbs-menu">
+            <button class="bbs-btn bbs-cancel"><a href="/bbs">취소</a></button><button class="bbs-btn bbs-confirm"><a
+                    href="/bbs/write">등록</a></button>
+        </div>
+    </div>
+</body>
+
+</html>
