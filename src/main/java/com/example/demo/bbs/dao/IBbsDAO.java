@@ -14,5 +14,5 @@ public interface IBbsDAO {
 
 	ArticleDTO getArticle(int articleId);
 
-	int writeArticle(String title, String content, String id);
+	int writeArticle(ArticleDTO dto);
 }

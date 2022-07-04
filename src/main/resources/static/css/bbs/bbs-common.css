@@ -13,10 +13,13 @@
 }
 
 .bbs-menu {
-    text-align: right;
+    width: 100%;
+    float: left;
+    height: 40px;
 }
 
 .bbs-btn {
+    float: right;
     width: 80px;
     height: 40px;
     border: 1px solid gray;
@@ -31,7 +34,7 @@
 .bbs-btn a {
     display: block;
     height: 100%;
-    line-height: 40px;
+    line-height: 38px;
     font-weight: bold;
 }
 
@@ -39,13 +42,19 @@
     margin-right: 10px;
 }
 
-.bbs-btn.bbs-write,
-.bbs-btn.bbs-confirm {
+.bbs-write,
+.bbs-confirm,
+.bbs-edit,
+.bbs-delete,
+.bbs-list {
     background-color: gray;
 }
 
-.bbs-btn.bbs-write a,
-.bbs-btn.bbs-confirm a {
+.bbs-write a,
+.bbs-confirm a,
+.bbs-edit a,
+.bbs-delete a,
+.bbs-list a {
     color: white;
 }
 

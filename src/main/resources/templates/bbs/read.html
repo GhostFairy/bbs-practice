@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>TEST</title>
+    <link href="/static/css/common.css" rel="stylesheet">
+    <link href="/static/css/bbs/bbs-common.css" rel="stylesheet">
+    <link href="/static/css/bbs/bbs-main.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="bbs-wrapper">
+        <h1 id="bbs-title">BBS</h1>
+        <div class="bbs-menu">
+            <button class="bbs-btn left bbs-list"><a href="/bbs">목록</a></button><button
+                th:if="${session?.auth == article.author}" class="bbs-btn bbs-edit"><a
+                    th:href="@{'/bbs/edit'(articleId=${article.articleId})}">수정</a></button><button
+                th:if="${session?.auth == article.author}" class="bbs-btn bbs-delete"><a
+                    th:href="@{'/bbs/delete'(articleId=${article.articleId})}">삭제</a></button>
+        </div>
+        <div id="bbs-main">
+            <div th:text="${article.articleId}"></div>
+            <div th:text="${article.title}"></div>
+            <div th:text="${article.author}"></div>
+            <div th:utext="${#strings.replace(article.content, '&#10;', '&lt;br&gt;')}"></div>
+            <div th:text="${article.writeDate}"></div>
+            <div th:text="${article.viewCount}"></div>
+        </div>
+        <div class="bbs-menu">
+            <button class="bbs-btn left bbs-list"><a href="/bbs">목록</a></button><button
+                th:if="${session?.auth == article.author}" class="bbs-btn bbs-edit"><a
+                    th:href="@{'/bbs/edit'(articleId=${article.articleId})}">수정</a></button><button
+                th:if="${session?.auth == article.author}" class="bbs-btn bbs-delete"><a
+                    th:href="@{'/bbs/delete'(articleId=${article.articleId})}">삭제</a></button>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -25,8 +25,14 @@
         <div id="bbs-content-empty" th:if="${articleList eq null || #lists.size(articleList) le 0}">
             등록된 게시글이 없습니다.
         </div>
-        <div th:if="${articleList ne null && #lists.size(articleList) gt 0}">
-
+        <div id="bbs-content" th:if="${articleList ne null && #lists.size(articleList) gt 0}">
+            <div class="bbs-content-article" th:each="article : ${articleList}">
+                <div th:text="${article.articleId}"></div>
+                <div class="bbs-content-title"><a th:href="@{'/bbs/read'(articleId=${article.articleId})}" th:text="${article.title}"></a></div>
+                <div th:text="${article.author}"></div>
+                <div th:text="${article.writeDate}"></div>
+                <div th:text="${article.viewCount}"></div>
+            </div>
         </div>
         <div class="bbs-menu">
             <button class="bbs-btn bbs-write"><a href="/bbs/write">글 작성</a></button>

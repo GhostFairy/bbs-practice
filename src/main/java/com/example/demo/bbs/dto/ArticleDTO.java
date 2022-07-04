@@ -16,4 +16,12 @@ public class ArticleDTO {
 	private Date writeDate;
 	private int viewCount;
 
+	public ArticleDTO() {
+	}
+
+	public ArticleDTO(String title, String content, String author) {
+		this.title = title;
+		this.content = content;
+		this.author = author;
+	}
 }

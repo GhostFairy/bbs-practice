@@ -5,16 +5,17 @@
 
 <mapper namespace="com.example.demo.bbs.dao.IBbsDAO">
 	<select id="getArticleList" resultType="ArticleListDTO">
-		SELECT ARTICLE_ID, TITLE,
-		AUTHOR, WRITE_DATE, VIEW_COUNT FROM EXPORTTESTUSER.TEST_TABLE_BBS
+		SELECT ARTICLE_ID, TITLE, AUTHOR, WRITE_DATE, VIEW_COUNT FROM EXPORTTESTUSER.TEST_TABLE_BBS ORDER BY ARTICLE_ID DESC
 	</select>
 
 	<select id="getArticle" resultType="ArticleDTO">
-		SELECT * FROM
-		EXPORTTESTUSER.TEST_TABLE_BBS WHERE ARTICLE_ID = #{articleId};
+		SELECT * FROM EXPORTTESTUSER.TEST_TABLE_BBS WHERE ARTICLE_ID = #{articleId}
 	</select>
 	
-	<insert id="writeArticle">
-		INSERT INTO EXPORTTESTUSER.TEST_TABLE_BBS(TITLE, CONTENT, AUTHOR) VALUES(#{title}, #{content}, #{id})
+	<insert id="writeArticle" parameterType="ArticleDTO">
+		INSERT INTO EXPORTTESTUSER.TEST_TABLE_BBS(TITLE, CONTENT, AUTHOR) VALUES(#{title}, #{content}, #{author})
+		<selectKey keyProperty="articleId" resultType="Integer">
+			SELECT "ISEQ$$_399900".currval FROM DUAL
+		</selectKey>
 	</insert>
 </mapper>

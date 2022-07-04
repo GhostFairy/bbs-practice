@@ -4,9 +4,36 @@
     border-style: solid;
     font-weight: bold;
     display: grid;
-    grid-template-columns: 65% 15% 10% 10%;
+    grid-template-columns: 65% 10% 15% 10%;
     height: 40px;
     line-height: 36px;
+}
+
+#bbs-content {
+    border-bottom: 2px solid gray;
+}
+
+.bbs-content-article {
+    display: grid;
+    grid-template-columns: 10% 55% 10% 15% 10%;
+    height: 40px;
+    line-height: 40px;
+}
+
+.bbs-content-article div {
+    padding: 0 10px;
+}
+
+.bbs-content-title {
+    text-align: left;
+}
+
+.bbs-content-title a {
+    display: inline-block;
+    color: black;
+}
+.bbs-content-title a:hover {
+    text-decoration: underline !important;
 }
 
 #bbs-content-empty {

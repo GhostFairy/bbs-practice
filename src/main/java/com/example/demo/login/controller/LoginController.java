@@ -40,9 +40,9 @@ public class LoginController {
 	public String loginProcess(HttpSession session, String id, String pw) {
 		if (memberService.loginMember(id, pw)) {
 			session.setAttribute("auth", id);
-			return "true";
+			return "success";
 		} else {
-			return "false";
+			return "fail";
 		}
 	}
 
