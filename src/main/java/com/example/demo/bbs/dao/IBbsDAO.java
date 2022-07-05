@@ -15,4 +15,8 @@ public interface IBbsDAO {
 	ArticleDTO getArticle(int articleId);
 
 	int writeArticle(ArticleDTO dto);
+	
+	int deleteArticle(int articleId);
+	
+	int editArticle(ArticleDTO dto);
 }

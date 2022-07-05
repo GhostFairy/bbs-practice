@@ -14,8 +14,7 @@
 
 .bbs-menu {
     width: 100%;
-    float: left;
-    height: 40px;
+    height: 60px;
 }
 
 .bbs-btn {
@@ -25,6 +24,10 @@
     border: 1px solid gray;
     border-radius: 3px;
     margin: 10px 0px;
+}
+
+.bbs-btn.left {
+    float: left;
 }
 
 .bbs-btn:hover {
@@ -38,7 +41,7 @@
     font-weight: bold;
 }
 
-.bbs-btn:not(:last-child) {
+.bbs-btn:not(.last) {
     margin-right: 10px;
 }
 
@@ -58,10 +61,12 @@
     color: white;
 }
 
-.bbs-btn.bbs-cancel {
+.bbs-cancel,
+.bbs-list {
     background-color: white;
 }
 
-.bbs-btn.bbs-cancel a {
+.bbs-cancel a,
+.bbs-list a {
     color: black;
 }

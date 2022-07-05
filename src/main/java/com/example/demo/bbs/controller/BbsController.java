@@ -54,4 +54,25 @@ public class BbsController {
 		return mv;
 	}
 
+	@PostMapping("/bbs/delete")
+	@ResponseBody
+	public String deleteArticle(HttpSession session, int articleId) {
+		String id = (String) session.getAttribute("auth");
+		return String.valueOf(bbsService.deleteArticle(articleId, id));
+	}
+
+	@GetMapping("/bbs/edit")
+	public ModelAndView edit(int articleId) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("article", bbsService.getArticle(articleId));
+		mv.setViewName("/bbs/edit");
+		return mv;
+	}
+
+	@PostMapping("/bbs/edit")
+	@ResponseBody
+	public String editArticle(HttpSession session, int articleId, String title, String content) {
+		String id = (String) session.getAttribute("auth");
+		return String.valueOf(bbsService.editArticle(articleId, title, content, id));
+	}
 }

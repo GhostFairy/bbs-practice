@@ -5,17 +5,33 @@
 
 <mapper namespace="com.example.demo.bbs.dao.IBbsDAO">
 	<select id="getArticleList" resultType="ArticleListDTO">
-		SELECT ARTICLE_ID, TITLE, AUTHOR, WRITE_DATE, VIEW_COUNT FROM EXPORTTESTUSER.TEST_TABLE_BBS ORDER BY ARTICLE_ID DESC
+		SELECT ARTICLE_ID, TITLE,
+		AUTHOR, WRITE_DATE, VIEW_COUNT FROM EXPORTTESTUSER.TEST_TABLE_BBS
+		ORDER BY ARTICLE_ID DESC
 	</select>
 
 	<select id="getArticle" resultType="ArticleDTO">
-		SELECT * FROM EXPORTTESTUSER.TEST_TABLE_BBS WHERE ARTICLE_ID = #{articleId}
+		SELECT * FROM
+		EXPORTTESTUSER.TEST_TABLE_BBS WHERE ARTICLE_ID = #{articleId}
 	</select>
-	
+
 	<insert id="writeArticle" parameterType="ArticleDTO">
-		INSERT INTO EXPORTTESTUSER.TEST_TABLE_BBS(TITLE, CONTENT, AUTHOR) VALUES(#{title}, #{content}, #{author})
+		INSERT INTO EXPORTTESTUSER.TEST_TABLE_BBS(TITLE, CONTENT, AUTHOR)
+		VALUES(#{title}, #{content}, #{author})
 		<selectKey keyProperty="articleId" resultType="Integer">
-			SELECT "ISEQ$$_399900".currval FROM DUAL
+			SELECT
+			"ISEQ$$_399900".currval FROM DUAL
 		</selectKey>
 	</insert>
+
+	<delete id="deleteArticle">
+		DELETE FROM EXPORTTESTUSER.TEST_TABLE_BBS WHERE
+		ARTICLE_ID = #{articleId}
+	</delete>
+
+	<update id="editArticle" parameterType="ArticleDTO">
+		UPDATE
+		EXPORTTESTUSER.TEST_TABLE_BBS SET TITLE = #{title}, CONTENT =
+		#{content} WHERE ARTICLE_ID = #{articleId}
+	</update>
 </mapper>

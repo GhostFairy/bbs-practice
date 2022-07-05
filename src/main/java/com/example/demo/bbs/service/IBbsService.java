@@ -12,5 +12,9 @@ public interface IBbsService {
 	public ArticleDTO getArticle(int articleId);
 
 	public int writeArticle(String title, String content, String id);
+	
+	public boolean deleteArticle(int articleId, String id);
+	
+	public boolean editArticle(int articleId, String title, String content, String id);
 
 }

@@ -10,15 +10,17 @@
 
 <body>
     <div id="bbs-wrapper">
-        <h1 id="bbs-title">글 작성</h1>
+        <h1 id="bbs-title">글 수정</h1>
         <div class="bbs-menu">
             <button class="bbs-btn last bbs-confirm"><a>등록</a></button><button
                 class="bbs-btn bbs-cancel"><a href="/bbs">취소</a></button>
         </div>
         <div id="bbs-main">
             <form id="bbs-write-form" action="/bbs/write" method="POST">
-                <input id="article-title" type="text" name="title" placeholder="제목을 입력하세요.">
-                <textarea id="article-content" name="content" placeholder="내용을 입력하세요."></textarea>
+                <input id="article-id" type="hidden" name="articleId" th:value="${param.articleId}">
+                <input id="article-title" type="text" name="title" placeholder="제목을 입력하세요." th:value="${article.title}">
+                <textarea id="article-content" name="content" placeholder="내용을 입력하세요."
+                    th:text="${article.content}"></textarea>
             </form>
         </div>
         <div class="bbs-menu">
@@ -27,7 +29,7 @@
         </div>
     </div>
 
-    <script src="/static/js/bbs/bbs-write.js"></script>
+    <script src="/static/js/bbs/bbs-edit.js"></script>
 </body>
 
 </html>
