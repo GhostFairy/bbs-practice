@@ -9,11 +9,13 @@
 </head>
 
 <body>
+    <div th:replace="frag :: header"></div>
+
     <div id="bbs-wrapper">
         <h1 id="bbs-title">글 수정</h1>
         <div class="bbs-menu">
             <button class="bbs-btn last bbs-confirm"><a>등록</a></button><button
-                class="bbs-btn bbs-cancel"><a href="/bbs">취소</a></button>
+                class="bbs-btn bbs-cancel"><a onclick="history.back()">취소</a></button>
         </div>
         <div id="bbs-main">
             <form id="bbs-write-form" action="/bbs/write" method="POST">
@@ -25,7 +27,7 @@
         </div>
         <div class="bbs-menu">
             <button class="bbs-btn last bbs-confirm"><a>등록</a></button><button
-                class="bbs-btn bbs-cancel"><a href="/bbs">취소</a></button>
+                class="bbs-btn bbs-cancel"><a onclick="history.back()">취소</a></button>
         </div>
     </div>
 

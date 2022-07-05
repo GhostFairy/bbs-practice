@@ -34,4 +34,9 @@
 		EXPORTTESTUSER.TEST_TABLE_BBS SET TITLE = #{title}, CONTENT =
 		#{content} WHERE ARTICLE_ID = #{articleId}
 	</update>
+
+	<update id="increaseViewCount">
+		UPDATE EXPORTTESTUSER.TEST_TABLE_BBS SET VIEW_COUNT = VIEW_COUNT+1 WHERE
+		ARTICLE_ID = #{articleId}
+	</update>
 </mapper>

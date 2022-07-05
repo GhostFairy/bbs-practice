@@ -24,6 +24,7 @@ public class BbsServiceImpl implements IBbsService {
 
 	@Override
 	public ArticleDTO getArticle(int articleId) {
+		bbsDAO.increaseViewCount(articleId);
 		return bbsDAO.getArticle(articleId);
 	}
 
@@ -39,7 +40,7 @@ public class BbsServiceImpl implements IBbsService {
 
 	@Override
 	public boolean deleteArticle(int articleId, String id) {
-		ArticleDTO dto = getArticle(articleId);
+		ArticleDTO dto = bbsDAO.getArticle(articleId);
 
 		if (dto != null && dto.getAuthor().equals(id)) {
 			if (bbsDAO.deleteArticle(articleId) == 1) {
@@ -54,7 +55,7 @@ public class BbsServiceImpl implements IBbsService {
 
 	@Override
 	public boolean editArticle(int articleId, String title, String content, String id) {
-		ArticleDTO dto = getArticle(articleId);
+		ArticleDTO dto = bbsDAO.getArticle(articleId);
 
 		if (dto != null && dto.getAuthor().equals(id)) {
 			dto.setTitle(title);

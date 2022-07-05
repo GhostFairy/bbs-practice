@@ -9,13 +9,15 @@
 </head>
 
 <body>
+    <div th:replace="frag :: header"></div>
+
     <div id="bbs-wrapper">
         <h1 id="bbs-title">BBS</h1>
         <div class="bbs-menu">
             <button class="bbs-btn left bbs-list"><a href="/bbs">목록</a></button><button
-                th:if="${session?.auth == article.author}" class="bbs-btn last bbs-delete"><a>삭제</a></button><button
-                th:if="${session?.auth == article.author}" class="bbs-btn bbs-edit"><a
-                    th:href="@{'/bbs/edit'(articleId=${article.articleId})}">수정</a></button>
+                th:if="${session?.auth == article.author}" class="bbs-btn last bbs-edit"><a
+                    th:href="@{'/bbs/edit'(articleId=${article.articleId})}">수정</a></button><button
+                th:if="${session?.auth == article.author}" class="bbs-btn bbs-delete"><a>삭제</a></button>
         </div>
         <div id="bbs-main">
             <div id="bbs-article-id" th:text="${article.articleId}"></div>
@@ -27,9 +29,9 @@
         </div>
         <div class="bbs-menu">
             <button class="bbs-btn left bbs-list"><a href="/bbs">목록</a></button><button
-                th:if="${session?.auth == article.author}" class="bbs-btn last bbs-delete"><a>삭제</a></button><button
-                th:if="${session?.auth == article.author}" class="bbs-btn bbs-edit"><a
-                    th:href="@{'/bbs/edit'(articleId=${article.articleId})}">수정</a></button>
+                th:if="${session?.auth == article.author}" class="bbs-btn last bbs-edit"><a
+                    th:href="@{'/bbs/edit'(articleId=${article.articleId})}">수정</a></button><button
+                th:if="${session?.auth == article.author}" class="bbs-btn bbs-delete"><a>삭제</a></button>
         </div>
     </div>
 

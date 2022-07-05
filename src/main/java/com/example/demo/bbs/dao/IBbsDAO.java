@@ -19,4 +19,6 @@ public interface IBbsDAO {
 	int deleteArticle(int articleId);
 	
 	int editArticle(ArticleDTO dto);
+	
+	int increaseViewCount(int articleId);
 }

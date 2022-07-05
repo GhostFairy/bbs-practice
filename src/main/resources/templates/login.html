@@ -8,6 +8,8 @@
 </head>
 
 <body>
+    <div th:replace="frag :: header"></div>
+
     <div id="login-wrapper">
         <h1 id="login-title">로그인</h1>
         <div id="login-main">
@@ -15,6 +17,7 @@
                 <input id="login-id" class="login-formdata" name="id" placeholder="아이디를 입력하세요.">
                 <input id="login-pw" class="login-formdata" name="pw" placeholder="비밀번호를 입력하세요.">
                 <input id="login-loginbtn" class="login-btn login-submit" type="submit" value="로그인">
+                <input id="login-cancelbtn" class="login-btn login-cancel" type="button" value="취소">
             </form>
         </div>
     </div>
